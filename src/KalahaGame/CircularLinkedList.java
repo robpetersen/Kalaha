@@ -1,5 +1,7 @@
 package KalahaGame;
 
+import javafx.scene.control.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +13,7 @@ public class CircularLinkedList {
         createCircularLinkedList();
     }
 
-    private class ListNode{
+    public class ListNode{
         private ListNode next;
         private Pit data;
 
@@ -26,13 +28,14 @@ public class CircularLinkedList {
         public Pit getData() {
             return data;
         }
-    }
 
+        public int getStones(){
+            return data.getStones();
+        }
 
-    //takes in a Pit and returns data from the Pit in the next ListNode in the List
-    public Pit getNextData(ListNode current){
-        ListNode next = current.getNext();
-        return next.getData();
+        public void setStones(int newStoneCount){
+            data.setStones(newStoneCount);
+        }
     }
 
     public Pit getData(ListNode current){
@@ -44,24 +47,28 @@ public class CircularLinkedList {
         return list.get(index);
     }
 
+    public int length(){
+        return list.size();
+    }
+
     private ListNode first,second,third,fourth,fifth,sixth,seventh,eighth,ninth,tenth,eleventh,twelfth,thirteenth,fourteenth;
 
     //Instantiating the nodes needed for Kalaha
     private void setup(){
-        list.add(first = new ListNode(new Pit(1,false,6,1)));
-        list.add(second = new ListNode(new Pit(1,false,6,2)));
-        list.add(third = new ListNode(new Pit(1,false,6,3)));
-        list.add(fourth = new ListNode(new Pit(1,false,6,4)));
-        list.add(fifth = new ListNode(new Pit(1,false,6,5)));
-        list.add(sixth = new ListNode(new Pit(1,false,6,6)));
-        list.add(seventh = new ListNode(new Pit(1,true,0,7)));
-        list.add(eighth = new ListNode(new Pit(2,false,6,8)));
-        list.add(ninth = new ListNode(new Pit(2,false,6,9)));
-        list.add(tenth = new ListNode(new Pit(2,false,6,10)));
-        list.add(eleventh = new ListNode(new Pit(2,false,6,11)));
-        list.add(twelfth = new ListNode(new Pit(2,false,6,12)));
-        list.add(thirteenth = new ListNode(new Pit(2,false,6,13)));
-        list.add(fourteenth = new ListNode(new Pit(2,false,6,14)));
+        list.add(first = new ListNode(new Pit(1,false,6,new Button("bullshit"))));
+        list.add(second = new ListNode(new Pit(1,false,6,new Button("a"))));
+        list.add(third = new ListNode(new Pit(1,false,6,new Button("b"))));
+        list.add(fourth = new ListNode(new Pit(1,false,6,new Button("c"))));
+        list.add(fifth = new ListNode(new Pit(1,false,6,new Button("d"))));
+        list.add(sixth = new ListNode(new Pit(1,false,6, new Button("e"))));
+        list.add(seventh = new ListNode(new Pit(1,true,0,new Button("f"))));
+        list.add(eighth = new ListNode(new Pit(2,false,6,new Button("g"))));
+        list.add(ninth = new ListNode(new Pit(2,false,6,new Button("h"))));
+        list.add(tenth = new ListNode(new Pit(2,false,6,new Button("i"))));
+        list.add(eleventh = new ListNode(new Pit(2,false,6,new Button("j"))));
+        list.add(twelfth = new ListNode(new Pit(2,false,6,new Button("k"))));
+        list.add(thirteenth = new ListNode(new Pit(2,false,6,new Button("l"))));
+        list.add(fourteenth = new ListNode(new Pit(2,true,0,new Button("m"))));
     }
 
     //setting references to next node
@@ -81,6 +88,4 @@ public class CircularLinkedList {
         thirteenth.next = fourteenth;
         fourteenth.next = first;
     }
-
-
 }

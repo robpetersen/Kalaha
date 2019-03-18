@@ -1,19 +1,19 @@
 package KalahaGame;
 
+import javafx.scene.control.Button;
+
 public class Pit {
+
     private int belongsTo;
     private boolean isKalaha;
     private int stones;
+    private Button button = null;
 
-    private int position;
-
-
-
-    public Pit(int belongsTo, boolean isKalaha, int stones, int position){
+    public Pit(int belongsTo, boolean isKalaha, int stones, Button button){
         this.belongsTo = belongsTo;
         this.isKalaha = isKalaha;
         this.stones = stones;
-        this.position = position;
+        this.button = button;
     }
 
     public int getStones() {
@@ -24,17 +24,15 @@ public class Pit {
         this.stones = stones;
     }
 
-    public int getPosition() {
-        return position;
+    public int getBelongsTo() {
+        return belongsTo;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public boolean isKalaha() {
+        return isKalaha;
     }
 
-    @Override
-    public String toString(){
-        return "Player: " + belongsTo + ", isKalaha: " + isKalaha + ", Stones: " + stones + ", Position: " + position;
+    public Button getButton() {
+        return button;
     }
-
 }
