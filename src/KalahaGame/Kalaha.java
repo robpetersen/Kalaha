@@ -87,15 +87,8 @@ public class Kalaha extends Application {
         //while there are stones in the hand
         while(hand > 0){
             //place stones unless this element is a kalaha and it belongs to the other player
-            if(current.getData().isKalaha() &&
-                    current.getData().getBelongsTo() != currentTurn){
-
-                //glitch in the matrix begin
-                current.setStones(current.getStones()-1);
-                current.getNext().setStones(current.getNext().getStones()+1);
-                hand--;
-                //glitch in the matrix end
-
+            if(current.getNext().getData().isKalaha() &&
+                    current.getNext().getData().getBelongsTo() != currentTurn){
                 current = current.getNext();
             }
             else{
