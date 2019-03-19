@@ -30,7 +30,7 @@ public class Kalaha extends Application {
         turnLabel.setFont(new Font(40));
         root.getChildren().add(turnLabel);
 
-        //creating all buttons and adding them to Pane
+        //getting all buttons from list and adding them to Pane
         for (int i = 0; i < boardList.length(); i++) {
             final int index = i;
             Button temp = boardList.get(i).getData().getButton();
